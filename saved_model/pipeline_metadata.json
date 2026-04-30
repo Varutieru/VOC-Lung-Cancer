@@ -1,0 +1,96 @@
+{
+  "pipeline_version": "1.0",
+  "n_input_features": 27,
+  "input_feature_names": [
+    "CH2O",
+    "C2H4O",
+    "C3H6O",
+    "C4H8O",
+    "C5H10O",
+    "C6H12O",
+    "C7H14O",
+    "C8H16O",
+    "C9H18O",
+    "C10H20O",
+    "C11H22O",
+    "C12H24O",
+    "C13H26O",
+    "C4H8O2",
+    "C2H4O2",
+    "C3H4O",
+    "C6H10O2",
+    "C9H16O2",
+    "C3H4O2",
+    "C4H6O2",
+    "C4H6O",
+    "C4H4O2",
+    "C5H8O",
+    "C7H6O",
+    "C7H11O",
+    "C13H22O",
+    "C15H10O"
+  ],
+  "n_selected_features": 5,
+  "selected_features": [
+    "C4H8O",
+    "C10H20O",
+    "C11H22O",
+    "C4H8O2",
+    "C13H22O"
+  ],
+  "selected_feature_names": [
+    "Butanal",
+    "Decanal",
+    "Undecanal",
+    "C4H8O2",
+    "Tridecenal"
+  ],
+  "label_mapping": {
+    "Control": 0,
+    "Cancer": 1,
+    "Benign": 1
+  },
+  "binary_labels": {
+    "0": "Control (Healthy)",
+    "1": "Cancer+Benign (Positive)"
+  },
+  "clinical_threshold": 0.23754243783517268,
+  "target_sensitivity": 0.9,
+  "achieved_sensitivity": 0.9148936170212766,
+  "achieved_specificity": 0.7948717948717949,
+  "primary_model": "SVM-RBF",
+  "test_auc": 0.917621385706492,
+  "sensor_array": {
+    "total": 22,
+    "MOS": 10,
+    "EC": 8,
+    "PID": 1,
+    "QCM": 2
+  },
+  "calibration_models": {
+    "MOS": {
+      "type": "power_law",
+      "params": {
+        "a": 1.008207794051327,
+        "b": 0.35002740628930656,
+        "type": "MOS"
+      }
+    },
+    "EC": {
+      "type": "linear",
+      "params": {
+        "sensitivity": 0.08494967089327923,
+        "I_zero": 12.319991772962243,
+        "type": "EC"
+      }
+    },
+    "PID": {
+      "type": "linear_with_RF",
+      "params": {
+        "sensitivity": 0.0042008826748347276,
+        "V_zero": 0.008787944384113455,
+        "type": "PID"
+      }
+    }
+  }
+}
